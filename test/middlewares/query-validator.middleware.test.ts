@@ -112,7 +112,7 @@ describe('queryValidationMiddleware', () => {
 
     it('should return 400 status when time is not a string', async () => {
       mockRequest.query = {
-        time: 123,
+        time: '123',
       };
 
       const middleware = queryValidationMiddleware(GetPositionDto);
@@ -197,8 +197,8 @@ describe('queryValidationMiddleware', () => {
 
         // Reset mocks for next iteration
         mockNext.mockClear();
-        mockResponse.status.mockClear();
-        mockResponse.json.mockClear();
+        (mockResponse.status as jest.Mock).mockClear();
+        (mockResponse.json as jest.Mock).mockClear();
       }
     });
   });

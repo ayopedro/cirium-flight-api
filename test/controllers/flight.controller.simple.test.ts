@@ -43,8 +43,8 @@ describe('FlightController - Basic Tests', () => {
   describe('POST /flights', () => {
     it('should return 400 for invalid data', async () => {
       const invalidData = {
-        arrivalAerodrome: '', // Invalid: empty string
-        arrivalTime: 'invalid-date', // Invalid: not a valid date
+        arrivalAerodrome: '',
+        arrivalTime: 'invalid-date',
         departureAerodrome: 'JFK',
         departureTime: '2024-01-01T10:00:00Z',
       };
@@ -61,7 +61,6 @@ describe('FlightController - Basic Tests', () => {
     it('should return 400 for missing required fields', async () => {
       const incompleteData = {
         arrivalAerodrome: 'LAX',
-        // Missing other required fields
       };
 
       const response = await request(app)
@@ -92,7 +91,6 @@ describe('FlightController - Basic Tests', () => {
         .get('/flights/1/in-airspace')
         .query({
           bottomLeftX: -10,
-          // Missing other coordinates
         })
         .expect(400);
 

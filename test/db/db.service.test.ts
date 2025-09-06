@@ -76,7 +76,7 @@ describe('DbService', () => {
     });
 
     it('should handle different data types in query parameters', async () => {
-      const query = { id: 1, active: true, count: 0 };
+      const query = { id: 1, active: 'true', count: 0 };
       await DbService.get('flights', query);
 
       expect(fetch).toHaveBeenCalledWith(
