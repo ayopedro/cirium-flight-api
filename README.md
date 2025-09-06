@@ -124,7 +124,7 @@ curl -X POST http://localhost:3000/flights \
 1. **Clone the repository**
 
    ```bash
-   git clone <repository-url>
+   git clone git@github.com:ayopedro/cirium-flight-api.git
    cd cirium-task
    ```
 
